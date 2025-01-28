@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+gunicorn = "*"
+flask-cors = "*"
+markdown = "*"
+requests = "*"
+pytest = "*"
+
+[dev-packages]
+"flake8" = "*"
+pytest = "*"
+
+[requires]
+python_version = "3.10"
+
+[pipenv]
+allow_prereleases = true
+
+[scripts]
+test = "pytest"
