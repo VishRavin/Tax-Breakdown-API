@@ -1,3 +1,5 @@
+from tkinter.constants import NUMERIC
+
 from flask import jsonify, request
 from app import app
 from . import controller
@@ -10,5 +12,5 @@ FORCE_LIST = [500]
 @app.route('/tax-breakdown', methods=['GET'])
 def calculate_tax_breakdown():
     year = request.args.get('tax_year', default=2022, type = int)
-    salary = request.args.get('salary', type = int)
+    salary = request.args.get('salary', type = float)
     return jsonify(controller.tax_breakdown(year, salary))
