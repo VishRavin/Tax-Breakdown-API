@@ -22,6 +22,12 @@ def bad_request_handler(e):
         )
     }), 400
 
+@app.errorhandler(Exception)
+def exception_handler(e):
+    return jsonify({
+        'errors': format_error(str(e), code='INTERNAL_SERVER_ERROR')
+    }), 500
+
 
 @app.route('/')
 def instructions():
